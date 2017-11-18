@@ -17,9 +17,12 @@ namespace TrafficData
         protected void Page_Load(object sender, EventArgs e)
         {
             string a = Request.Params["location"];
+            string minYear = Request.Params["minYear"];
+            string maxYear = Request.Params["maxYear"];
             int ignored = 0;
             bool usable = int.TryParse(a, out ignored);
-
+            usable = int.TryParse(minYear, out ignored);
+            usable = int.TryParse(maxYear, out ignored);
 
             if (usable)
             {
@@ -31,9 +34,15 @@ namespace TrafficData
                     SqlDataReader myReader = null;
                     SqlParameter myParam = new SqlParameter("@Param1", SqlDbType.VarChar);
                     myParam.Value = a;
+                    SqlParameter MinYear = new SqlParameter("@MinYear", SqlDbType.Int);
+                    MinYear.Value = int.Parse(minYear);
+                    SqlParameter MaxYear = new SqlParameter("@MaxYear", SqlDbType.Int);
+                    MaxYear.Value = int.Parse(maxYear);
 
-                    SqlCommand myCommand = new SqlCommand("select * from locations WHERE Loc_Post_Code = @Param1 ", myConnection);//AND Crash_Street LIKE '%' + @Param2 + '%'
+                    SqlCommand myCommand = new SqlCommand("select * from locations WHERE Loc_Post_Code = @Param1 AND Crash_Year >= @MinYear AND Crash_Year <= @MaxYear; ", myConnection);//AND Crash_Street LIKE '%' + @Param2 + '%'
                     myCommand.Parameters.Add(myParam);
+                    myCommand.Parameters.Add(MinYear);
+                    myCommand.Parameters.Add(MaxYear);
 
                     myReader = myCommand.ExecuteReader();
                     List<CrashData> data = new List<CrashData>();

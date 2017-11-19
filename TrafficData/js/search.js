@@ -7,8 +7,8 @@ var heatmap = null;
 function queryDatabase() {
     //get the values
     var querys = $('#search').val();
-    var minYear = $('#BottomYear').val();
-    var maxYear = $('#topYear').val();
+    var minYear = $('#body_BottomYear').val();
+    var maxYear = $('#body_topYear').val();
     //do error checking
     if (!isNaN(querys) && querys != "" && querys.length === 4) {
         //hide the warning that states "Must enter a valid Postcode"
@@ -31,38 +31,38 @@ function queryDatabase() {
 //when the minimum year changes make sure the maximum year cannot be less than the minimum year
 function minSelected() {
     //get values
-    var valuemin = $('#BottomYear option:selected').text();
-    var valuemax = $('#topYear option:selected').text();
+    var valuemin = $('#body_BottomYear option:selected').text();
+    var valuemax = $('#body_topYear option:selected').text();
     //clear top year's values
-    $('#topYear').empty();
+    $('#body_topYear').empty();
     //give it new values
     for (var i = valuemin; i <= (new Date()).getFullYear() ; i++) {
-        $('#topYear').append($("<option></option>").attr("value", i).text(i));
+        $('#body_topYear').append($("<option></option>").attr("value", i).text(i));
     }
     //select the previous value, or if the value is now less than the min somehow make it the min
     if (valuemax >= valuemin) {
-        $('#topYear').val(valuemax);
+        $('#body_topYear').val(valuemax);
     } else {
-        $('#topYear').val(valuemin);
+        $('#body_topYear').val(valuemin);
     }
 }
 
 //when the maximum year changes make sure the minimum year cannot be less than the maximum year
 function maxSelected() {
     //get values
-    var valuemin = $('#BottomYear option:selected').text();
-    var valuemax = $('#topYear option:selected').text();
+    var valuemin = $('#body_BottomYear option:selected').text();
+    var valuemax = $('#body_topYear option:selected').text();
     //clear min year's values
-    $('#BottomYear').empty();
+    $('#body_BottomYear').empty();
     //give it new values
     for (var i = 2001; i <= valuemax; i++) {
-        $('#BottomYear').append($("<option></option>").attr("value", i).text(i));
+        $('#body_BottomYear').append($("<option></option>").attr("value", i).text(i));
     }
     //select the previous value, or if the value is now more than the max somehow make it the max
     if (valuemin <= valuemax) {
-        $('#BottomYear').val(valuemin);
+        $('#body_BottomYear').val(valuemin);
     } else {
-        $('#BottomYear').val(valuemax);
+        $('#body_BottomYear').val(valuemax);
     }
 }
 

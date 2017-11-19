@@ -1,7 +1,7 @@
 ﻿body {
 }
 
-.parentInput #BottomYear{
+.parentInput #body_BottomYear{
     min-width:51px !important;
     width:20%
 }
@@ -10,10 +10,11 @@
     min-width:600px;
     position:relative; 
      width:70%;
+     margin:7px;
 }
 
 
-.parentInput #topYear{
+.parentInput #body_topYear{
      min-width:51px !important;
      width:20%
 }

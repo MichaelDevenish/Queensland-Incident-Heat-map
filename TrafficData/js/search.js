@@ -36,7 +36,7 @@ function minSelected() {
     //clear top year's values
     $('#topYear').empty();
     //give it new values
-    for (var i = valuemin; i <= 2017; i++) {
+    for (var i = valuemin; i <= (new Date()).getFullYear() ; i++) {
         $('#topYear').append($("<option></option>").attr("value", i).text(i));
     }
     //select the previous value, or if the value is now less than the min somehow make it the min

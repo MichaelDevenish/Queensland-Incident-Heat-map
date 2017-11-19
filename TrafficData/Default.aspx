@@ -26,45 +26,11 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">Accident Hotspots</a>
                 </div>
-                <form class="navbar-form" onsubmit="return false;">
+                <form class="navbar-form" runat="server"  onsubmit="return false;">
                     <div class="form-group" style="display:inline;">
                         <div class="input-group parentInput">
-                            <select class="selectpicker form-control" id="BottomYear" onchange="minSelected()">
-                                <option selected="selected">2001</option>
-                                <option>2002</option>
-                                <option>2003</option>
-                                <option>2004</option>
-                                <option>2005</option>
-                                <option>2006</option>
-                                <option>2007</option>
-                                <option>2008</option>
-                                <option>2009</option>
-                                <option>2010</option>
-                                <option>2011</option>
-                                <option>2012</option>
-                                <option>2013</option>
-                                <option>2014</option>
-                                <option>2015</option>
-                                <option>2016</option>
-                            </select>
-                            <select class="selectpicker form-control" id="topYear" onchange="maxSelected()">
-                                <option>2002</option>
-                                <option>2003</option>
-                                <option>2004</option>
-                                <option>2005</option>
-                                <option>2006</option>
-                                <option>2007</option>
-                                <option>2008</option>
-                                <option>2009</option>
-                                <option>2010</option>
-                                <option>2011</option>
-                                <option>2012</option>
-                                <option>2013</option>
-                                <option>2014</option>
-                                <option>2015</option>
-                                <option>2016</option>
-                                <option selected="selected">2017</option>
-                            </select>
+                            <asp:DropdownList id="BottomYear" class="selectpicker form-control" onchange="minSelected()" runat="server"></asp:DropdownList>
+                            <asp:DropdownList id="topYear" class="selectpicker form-control" onchange="maxSelected()" runat="server"></asp:DropdownList> 
                             <input type="text" class="form-control" id="search" placeholder="Postcode" onkeydown="if (event.keyCode == 13) queryDatabase()"/>
                             <div class="input-group-btn">
                                 <button class="btn btn-default" type="button"  onclick="queryDatabase()" ><i class="glyphicon glyphicon-search"></i></button>

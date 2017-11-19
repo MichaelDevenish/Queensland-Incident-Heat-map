@@ -7,7 +7,7 @@ function querya() {
     if (!isNaN(querys) && querys != "" && querys.length === 4) {
         $.post('/search.aspx', { location: querys, minYear: minYear, maxYear: maxYear}, function (information) {
             var locations = information.data;
-            LoadMap(querys, locations);
+            LoadMap( locations);
         });
     } else {
         //show error
@@ -42,29 +42,21 @@ function maxSelected() {
     }
 }
 
-function LoadMap(postcode,locations) {
-    geocoder = new google.maps.Geocoder();
+function LoadMap(locations) {
     var loco = locations;
-    geocoder.geocode({ 'address': postcode, 'region': 'AU' }, function (results, status) {
-        if (status == 'OK') {
-            bounds = new google.maps.LatLngBounds();
-            map.panTo(results[0].geometry.location);
-            var heatmapData = [];
-            for (var i = 0; i < loco.length; i++) {
-                var coords = loco[i];
-                var latLng = new google.maps.LatLng(coords.Lat, coords.Lng);
-                bounds.extend(latLng);
-                heatmapData.push(latLng);
-            }
-            var heatmap = new google.maps.visualization.HeatmapLayer({
-                data: heatmapData,
-                map: map
-            });
-            map.fitBounds(bounds);
-        } else {
-            alert('Geocode was not successful for the following reason: ' + status);
-        }
+    bounds = new google.maps.LatLngBounds();
+    var heatmapData = [];
+    for (var i = 0; i < loco.length; i++) {
+        var coords = loco[i];
+        var latLng = new google.maps.LatLng(coords.Lat, coords.Lng);
+        bounds.extend(latLng);
+        heatmapData.push(latLng);
+    }
+    var heatmap = new google.maps.visualization.HeatmapLayer({
+        data: heatmapData,
+        map: map
     });
+    map.fitBounds(bounds);
 }
 
 function drawMap() {

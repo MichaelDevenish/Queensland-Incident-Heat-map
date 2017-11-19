@@ -110,6 +110,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\StyleSheet.css" />
     <Content Include="Default.aspx" />
     <Content Include="js\search.js" />
     <Content Include="search.aspx" />

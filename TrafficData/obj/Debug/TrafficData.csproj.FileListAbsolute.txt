@@ -32,3 +32,4 @@ c:\users\michael\documents\visual studio 2015\Projects\TrafficData\TrafficData\o
 c:\users\michael\documents\visual studio 2015\Projects\TrafficData\TrafficData\obj\Debug\TrafficData.pdb
 c:\users\michael\documents\visual studio 2015\Projects\TrafficData\TrafficData\bin\Newtonsoft.Json.dll
 c:\users\michael\documents\visual studio 2015\Projects\TrafficData\TrafficData\bin\Newtonsoft.Json.xml
+c:\users\michael\documents\visual studio 2015\Projects\TrafficData\TrafficData\obj\Debug\TrafficData.csprojResolveAssemblyReference.cache

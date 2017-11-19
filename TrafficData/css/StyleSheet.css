@@ -1,0 +1,22 @@
+﻿body {
+}
+
+.parentInput #BottomYear{
+    min-width:51px !important;
+    width:20%
+}
+
+.parentInput{
+    min-width:600px;
+    position:relative; 
+     width:70%;
+}
+
+
+.parentInput #topYear{
+     min-width:51px !important;
+     width:20%
+}
+.parentInput #search{
+     min-width:200px;
+}

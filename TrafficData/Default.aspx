@@ -65,9 +65,9 @@
                                 <option>2016</option>
                                 <option selected="selected">2017</option>
                             </select>
-                            <input type="text" class="form-control" id="search" placeholder="Postcode" onkeydown="javascript:querya()"/>
+                            <input type="text" class="form-control" id="search" placeholder="Postcode" onkeydown="if (event.keyCode == 13) queryDatabase()"/>
                             <div class="input-group-btn">
-                                <button class="btn btn-default" type="button"  onclick="javascript:querya()" ><i class="glyphicon glyphicon-search"></i></button>
+                                <button class="btn btn-default" type="button"  onclick="queryDatabase()" ><i class="glyphicon glyphicon-search"></i></button>
                             </div>
                         </div>
                     </div>

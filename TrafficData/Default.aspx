@@ -14,22 +14,19 @@
         <script src="js/search.js"></script>
         <script>
             $(document).ready(function() {
-                $('.dropdown-toggle').dropdown();
                 drawMap();
             });
         </script>
     </head>
 
     <body>
-
-        <div id="map" style="width:100%;height:100%;position: absolute; top: 0px; left: 0px;"></div>
+        <div id="map"></div>
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">Accident Hotspots</a>
                 </div>
-
-                <form class="navbar-form">
+                <form class="navbar-form" onsubmit="return false;">
                     <div class="form-group" style="display:inline;">
                         <div class="input-group parentInput">
                             <select class="selectpicker form-control" id="BottomYear" onchange="minSelected()">
@@ -68,13 +65,14 @@
                                 <option>2016</option>
                                 <option selected="selected">2017</option>
                             </select>
-                            <input type="text" class="form-control" id="search" style="width:60%" />
+                            <input type="text" class="form-control" id="search" placeholder="Postcode" onkeydown="javascript:querya()"/>
                             <div class="input-group-btn">
                                 <button class="btn btn-default" type="button"  onclick="javascript:querya()" ><i class="glyphicon glyphicon-search"></i></button>
                             </div>
                         </div>
                     </div>
                 </form>
+                <p class="error text-center" id ="searchError">Must enter a valid Postcode</p>
             </div>
         </nav>
 

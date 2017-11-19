@@ -1,15 +1,22 @@
 ﻿var map = null;
+var heatmap = null;
 
 function querya() {
     var querys = $('#search').val();
     var minYear = $('#BottomYear').val();
     var maxYear = $('#topYear').val();
     if (!isNaN(querys) && querys != "" && querys.length === 4) {
+        $("p#searchError").css('visibility', 'hidden');
+        $("p#searchError").css('height', '0px');
+        $("p#searchError").css('margin-bottom', '0px');
         $.post('/search.aspx', { location: querys, minYear: minYear, maxYear: maxYear}, function (information) {
             var locations = information.data;
             LoadMap( locations);
         });
     } else {
+        $("p#searchError").css('visibility', 'visible');
+        $("p#searchError").css('height', '24px');
+        $("p#searchError").css('margin-bottom', '16px');
         //show error
     }
 }
@@ -52,7 +59,11 @@ function LoadMap(locations) {
         bounds.extend(latLng);
         heatmapData.push(latLng);
     }
-    var heatmap = new google.maps.visualization.HeatmapLayer({
+    if (heatmap !== null) {
+        heatmap.setMap(null);
+        heatmap.getData().j = [];
+    }
+    heatmap =  new google.maps.visualization.HeatmapLayer({
         data: heatmapData,
         map: map
     });

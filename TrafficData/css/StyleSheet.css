@@ -19,8 +19,29 @@
 }
 .parentInput #search{
      min-width:200px;
+     width:60%
 }
 
 .navbar{
     box-shadow:0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+    min-width:650px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+#map{
+    width:100%;
+    height:100%;
+    position: absolute; 
+    top: 0px; 
+    left: 0px;
+    min-width:650px;
+}
+
+.error{
+    color:red;
+    visibility: hidden;
+    height: 0px;
+    margin-bottom: 0px;
 }

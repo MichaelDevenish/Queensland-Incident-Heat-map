@@ -1,4 +1,6 @@
-﻿function querya() {
+﻿var map = null;
+
+function querya() {
     var querys = $('#search').val();
     var minYear = $('#BottomYear').val();
     var maxYear = $('#topYear').val();
@@ -46,11 +48,7 @@ function LoadMap(postcode,locations) {
     geocoder.geocode({ 'address': postcode, 'region': 'AU' }, function (results, status) {
         if (status == 'OK') {
             bounds = new google.maps.LatLngBounds();
-            map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 10,
-                center: results[0].geometry.location ,
-                mapTypeId: 'roadmap'
-            });
+            map.panTo(results[0].geometry.location);
             var heatmapData = [];
             for (var i = 0; i < loco.length; i++) {
                 var coords = loco[i];
@@ -66,5 +64,13 @@ function LoadMap(postcode,locations) {
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
         }
+    });
+}
+
+function drawMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 2,
+        center: { lat: 0, lng:0 },
+        mapTypeId: 'roadmap'
     });
 }

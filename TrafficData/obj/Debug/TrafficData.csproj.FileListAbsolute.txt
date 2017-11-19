@@ -28,7 +28,6 @@ c:\users\michael\documents\visual studio 2015\Projects\TrafficData\TrafficData\b
 c:\users\michael\documents\visual studio 2015\Projects\TrafficData\TrafficData\bin\Microsoft.AI.WindowsServer.xml
 c:\users\michael\documents\visual studio 2015\Projects\TrafficData\TrafficData\bin\Microsoft.ApplicationInsights.xml
 c:\users\michael\documents\visual studio 2015\Projects\TrafficData\TrafficData\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-c:\users\michael\documents\visual studio 2015\Projects\TrafficData\TrafficData\obj\Debug\TrafficData.csprojResolveAssemblyReference.cache
 c:\users\michael\documents\visual studio 2015\Projects\TrafficData\TrafficData\obj\Debug\TrafficData.dll
 c:\users\michael\documents\visual studio 2015\Projects\TrafficData\TrafficData\obj\Debug\TrafficData.pdb
 c:\users\michael\documents\visual studio 2015\Projects\TrafficData\TrafficData\bin\Newtonsoft.Json.dll

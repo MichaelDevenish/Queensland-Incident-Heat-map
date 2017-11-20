@@ -1,7 +1,8 @@
 ﻿body {
+    padding-top: 70px;
 }
 
-.parentInput #body_BottomYear{
+.parentInput #Navbar_BottomYear{
     min-width:51px !important;
     width:20%
 }
@@ -14,7 +15,7 @@
 }
 
 
-.parentInput #body_topYear{
+.parentInput #Navbar_topYear{
      min-width:51px !important;
      width:20%
 }

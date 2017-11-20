@@ -10,18 +10,30 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/StyleSheet.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="js/search.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
 
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server" onsubmit="return false;">
-    <div>
-        <asp:ContentPlaceHolder ID="body" runat="server">
+        <asp:ContentPlaceHolder ID="Background" runat="server">
         
         </asp:ContentPlaceHolder>
-    </div>
+      
+            <nav class="navbar navbar-default  navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/">Accident Hotspots</a>
+                    </div>
+                      <asp:ContentPlaceHolder ID="Navbar" runat="server">
+        
+                      </asp:ContentPlaceHolder>
+                </div>
+            </nav>
+        
+         <asp:ContentPlaceHolder ID="Body" runat="server">
+        
+        </asp:ContentPlaceHolder>
     </form>
 </body>
 </html>
